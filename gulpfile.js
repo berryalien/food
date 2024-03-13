@@ -1,5 +1,4 @@
 const { src, dest, watch, parallel, series} = require('gulp');
-
 const scss         = require('gulp-sass')(require('sass'));
 const concat       = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
@@ -7,6 +6,10 @@ const uglify       = require('gulp-uglify');
 const imagemin     = require('gulp-imagemin');
 const clean        = require('gulp-clean');
 const browserSync  = require('browser-sync').create();
+const svgSprite    = require('gulp-svg-sprite');
+const cheerio      = require('gulp-cheerio');
+const replace      = require('gulp-replace');
+
 
 function browsersync() {
   browserSync.init({
@@ -33,7 +36,8 @@ function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/mixitup/dist/mixitup.js',
-    'app/js/main.js'
+    'app/js/main.js',
+    'node_modules/slick-carousel/slick/slick.js'
   ])
   .pipe(concat('main.min.js'))
   .pipe(uglify())
@@ -67,6 +71,31 @@ return src('app/images/**/*.*')
 .pipe(dest('dist/images'))
 }
 
+function svgSprites() {
+  return src('app/images/icons/*.svg')
+    .pipe(cheerio({
+      run: ($) => {
+        $("[fill]").removeAttr("fill");
+        $("[stroke]").removeAttr("stroke");
+        $("[style]").removeAttr("style");
+      },
+      parserOptions: {
+        xmlMode: true
+      },
+    }))
+    .pipe(replace('&gt;', '>')) // боремся с заменой символа 
+    .pipe(
+      svgSprite({
+        mode: {
+          stack: {
+            sprite: '../sprite.svg',
+          },
+        },
+      })
+    )
+    .pipe(dest('app/images'));
+}
+
 function building() {
   return src([
     'app/**/*.html',
@@ -85,6 +114,7 @@ function watching() {
   watch(['app/scss/**/*.scss'], styles);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/**/*.html']).on('change', browserSync.reload);
+  watch(['app/images/icons/*.svg'], svgSprites);
 }
 
 
@@ -94,7 +124,8 @@ exports.browsersync = browsersync;
 exports.watching    = watching;
 exports.images      = images;
 exports.cleanDist   = cleanDist;
+exports.svgSprites  = svgSprites;
 
 
 exports.building    = series(cleanDist, images, building);
-exports.default     = parallel(styles, scripts, browsersync, watching);
+exports.default     = parallel(svgSprites, styles, scripts, browsersync, watching);

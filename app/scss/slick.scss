@@ -1,0 +1,45 @@
+
+.carousel {
+  padding: 0 15px 30px;
+  margin: 20px;
+
+  &__card-img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+
+// .slick-arrow{
+//   position: absolute;
+//   top: 50%;
+//   transform: translate(-50%);
+
+//   border:none;
+//   border-color: none;
+//   padding: 0;
+//   cursor: pointer;
+
+//   font-size: 0;
+
+//   &::before{
+//     display: table;
+//   }
+// }
+
+// .slick-prev{
+//   left: 0;
+
+//   &::before{
+//     content: "";
+    
+//   }
+// }
+
+// .slick-next{
+//   right: 0;
+
+//   &::before{
+//     content: "";
+    
+//   }
+// }
