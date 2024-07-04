@@ -479,18 +479,19 @@
 
 
 .article-slider {
+  &__card {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 50px;
+}
 
-  &__card-img {
+  &__img-card {
     position: relative;
     border-radius: 50%;
   }
 
-  &__contents {
-    max-width: 650px;
-  }
+
 
   &__comment {
     position: relative;
@@ -521,11 +522,6 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
-  }
-
-  &__img-content {
-    max-width: 300px;
-    max-height: 300px;
   }
 
   &__cite {
