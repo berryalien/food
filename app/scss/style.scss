@@ -3,10 +3,17 @@
 @import 'reset';
 @import 'global';
 @import 'libs';
+@import 'slick';
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   padding: 60px 0;
+  min-height: 100%;
+  background-color: $von;
 }
+
 
 .menu {
   display: flex;
@@ -29,6 +36,10 @@
   &__link--active {
     color: $accent;
   }
+}
+
+.logo__header {
+  margin-right: auto;
 }
 
 .user-nav {
@@ -56,8 +67,6 @@
     }
   }
 
-
-
   .user-nav__svg {
     width: 18px;
     height: 18px;
@@ -75,9 +84,6 @@
   .user-nav__btn:active .user-nav__svg {
     stroke: $text;
   }
-
-
-
 
   &__num {
     position: absolute;
@@ -105,7 +111,10 @@
   }
 }
 
+.main {}
+
 .hero {
+  padding-bottom: 60px;
 
   &__benefits {
     display: flex;
@@ -119,7 +128,7 @@
 
   &__title {
     font-size: 66px;
-    line-height: 130%;
+    line-height: 1.3;
     text-transform: uppercase;
     margin-bottom: 20px;
     @extend %rubik-500;
@@ -132,7 +141,7 @@
   &__text {
     margin-bottom: 20px;
     font-size: 20px;
-    line-height: 150%;
+    line-height: 1.5;
   }
 
   &__items {
@@ -286,7 +295,6 @@
   }
 }
 
-
 .delivery {
 
   &__benefits {
@@ -424,7 +432,7 @@
   &__time {
     position: relative;
     padding-left: 30px;
-    line-height: 30px;
+    line-height: 1.66;
     padding-left: 32px;
   }
 
@@ -469,20 +477,22 @@
   }
 }
 
-.feedback {
-  &__card {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+
+.article-slider {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
   &__card-img {
     position: relative;
     border-radius: 50%;
   }
 
+  &__contents {
+    max-width: 650px;
+  }
 
-  &__slider-comment {
+  &__comment {
     position: relative;
     padding-left: 40px;
     padding-right: 40px;
@@ -510,11 +520,15 @@
       background-image: url('../images/feedback/“.svg');
       background-repeat: no-repeat;
       background-size: cover;
-
     }
   }
 
-  &__slider-cite {
+  &__img-content {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  &__cite {
     width: 570px;
     font-size: 20px;
     line-height: 1.5;
@@ -522,7 +536,7 @@
     @extend %rubik-italic;
   }
 
-  &__slider-author {
+  &__author {
     display: flex;
     flex-direction: column;
     color: $accent;
@@ -530,7 +544,7 @@
     @extend %rubik-500;
   }
 
-  &__slider-note {
+  &__note {
     color: $text;
     font-size: 14px;
     margin-top: 15px;
@@ -702,8 +716,9 @@
     }
 
     &:active {
-      background-color: rgb(255, 242, 237);
+      background-color: rgb(255, 242, 237, 1);
     }
+
   }
 
   .footer__social {
@@ -724,21 +739,20 @@
     transform: translate(-50%, -50%);
     transition: fill 0.4s, transform 0.4s;
 
-    &:focus {
+    .footer__social-link:focus .footer__socialnetworks {
       fill: $text;
     }
 
-    &:hover {
+    .footer__social-link:hover .footer__socialnetworks {
       fill: $white;
     }
 
-    &:active {
+    .footer__social-link:active .footer__socialnetworks {
 
       fill: $accent;
     }
   }
 }
-
 
 .footer__bottom {
   border-top: 1px solid $gray;
