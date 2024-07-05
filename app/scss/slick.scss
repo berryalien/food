@@ -2,11 +2,6 @@
   padding: 0 15px 30px;
   margin: 20px;
 
-}
-
-
-
-.article-slider {
   &__arrow {
     padding: 0;
     border: 3px solid $gray;
@@ -21,7 +16,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
 
   &__arrowleft {

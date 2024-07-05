@@ -57,60 +57,74 @@
   </header>
 
   <main class="main">
-
-    <section class="assortment section">
+    <div class="breadcrumbs">
       <div class="container">
-        <h2 class="title">Популярные категории</h2>
-        <ul class="assortment__filter">
-          <li class="assortment__category">
-            <button class="assortment__btn-food" type="button" data-filter="all">
-              <svg class="assortment__svg">
-                <use xlink:href="images/sprite.svg#icon_burgers"></use>
-              </svg>
-              Бургеры
-            </button>
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">
+              Главная
+            </a>
           </li>
-
-          <li class="assortment__category">
-            <button class="assortment__btn-food" type="button" data-filter=".category-b">
-              <svg class="assortment__svg">
-                <use xlink:href="images/sprite.svg#icon_pizza"></use>
-              </svg>
-              Пицца
-            </button>
-          </li>
-
-          <li class="assortment__category">
-            <button class="assortment__btn-food" type="button" data-filter=".category-c">
-              <svg class="assortment__svg">
-                <use xlink:href="images/sprite.svg#icon_sandwiches"></use>
-              </svg>
-              Сендвичи
-            </button>
-          </li>
-
-          <li class="assortment__category">
-            <button class="assortment__btn-food" type="button" data-filter=".category-d">
-              <svg class="assortment__svg">
-                <use xlink:href="images/sprite.svg#icon_asianfood"></use>
-              </svg>
-              Азиатская кухня
-            </button>
-          </li>
-
-
-
-
-          <li class="assortment__category">
-            <button class="assortment__btn-food" type="button" data-filter=".category-e">
-              <svg class="assortment__svg">
-                <use xlink:href="images/sprite.svg#icon_setmenu"></use>
-              </svg>
-              Cеты
-            </button>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">
+              Каталог товаров
+            </a>
           </li>
         </ul>
-
+      </div>
+    </div>
+    <section class="assortment section">
+      <div class="container">
+        <h2 class="title">Каталог продуктов</h2>
+        <div class="aside">
+          <div class="assortment__category">
+            <h6 class="assortment__category-title">
+              Категории
+            </h6>
+            <ul class="assortment__category-list">
+              <li class="assortment__category-item">
+                <a class="assortment__category-link" href="#">
+                  Бургеры
+                </a>
+              </li>
+              <li class="assortment__category-item">
+                <a class="assortment__category-link" href="#">
+                  Пицца
+                </a>
+              </li>
+              <li class="assortment__category-item">
+                <a class="assortment__category-link" href="#">
+                  Сендвичи
+                </a>
+              </li>
+              <li class="assortment__category-item">
+                <a class="assortment__category-link" href="#">
+                  Азиатская кухня
+                </a>
+              </li>
+              <li class="assortment__category-item">
+                <a class="assortment__category-link" href="#">
+                  Сеты
+                </a>
+              </li>
+              <li class="assortment__category-item">
+                <a class="assortment__category-link" href="#">
+                  Европейская кухня
+                </a>
+              </li>
+              <li class="assortment__category-item">
+                <a class="assortment__category-link" href="#">
+                  Напитки
+                </a>
+              </li>
+              <li class="assortment__category-item">
+                <a class="assortment__category-link" href="#">
+                  Алкоголь
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <ul class="assortment__gallery">
           <li class="assortment__item mix category-a">
             <article class="product-card">
@@ -274,8 +288,40 @@
             </article>
           </li>
         </ul>
-        <div class="">
-          
+        <div class="pagination">
+          <a class="pagination__arrow pagination__arrow--disabled" href="#">
+            <img class="pagination__arrow-icon" src="images/" alt="">
+          </a>
+          <ul class="pagination__list">
+            <li class="pagination__list-item">
+              <a class="pagination__list-num pagination__list-num--active" href="#">
+                1
+              </a>
+            </li>
+            <li class="pagination__list-item">
+              <a class="pagination__list-num" href="#">
+                2
+              </a>
+            </li>
+            <li class="pagination__list-item">
+              <a class="pagination__list-num" href="#">
+                ...
+              </a>
+            </li>
+            <li class="pagination__list-item">
+              <a class="pagination__list-num" href="#">
+                9
+              </a>
+            </li>
+            <li class="pagination__list-item">
+              <a class="pagination__list-num" href="#">
+                10
+              </a>
+            </li>
+          </ul>
+          <a class="pagination__arrow" href="#">
+            <img class="pagination__arrow-icon" src="images/" alt="">
+          </a>
         </div>
 
       </div>

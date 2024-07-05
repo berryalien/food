@@ -480,11 +480,11 @@
 
 .article-slider {
   &__card {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 50px;
-}
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+  }
 
   &__img-card {
     position: relative;
@@ -598,6 +598,10 @@
     margin-bottom: 30px;
   }
 
+  &__subscribe-from {
+    display: grid;
+  }
+
   .footer__form-input {
     max-width: 200px;
     padding: 13px 15px;
@@ -640,7 +644,7 @@
 
   &__form-btn {
     display: flex;
-    padding: 13px 35px;
+    padding: 13px 38px;
     font-size: 14px;
   }
 
