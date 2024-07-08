@@ -379,8 +379,8 @@
   }
 }
 
-.restaurants {
-
+.restaurants,
+.stocks {
   &__gallery {
     display: grid;
     column-gap: 30px;
@@ -410,6 +410,9 @@
     height: 300px;
     margin-bottom: 15px;
   }
+}
+
+.restaurants {
 
   &__info {
     padding-top: 0;
@@ -581,6 +584,20 @@
   &__item:not(:last-child) {
     margin-right: 20px;
   }
+}
+
+.stocks {
+  &__title {
+    display: flex;
+
+  }
+
+  &__text {
+    display: flex;
+    padding: 15px 20px;
+    @extend %rubik-400;
+  }
+
 }
 
 .footer {
