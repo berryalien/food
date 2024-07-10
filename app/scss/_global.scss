@@ -115,42 +115,6 @@ body {
   }
 }
 
-// .breadcrumbs {
-//   
-//   
-//   position: relative;
-
-
-//   &__list {
-//     display: flex;
-//   }
-
-//   &__item::after {
-//     content: '';
-//     position: absolute;
-//     background-image: url(../images/catalog/arrow-next.svg);
-//     width: 6px;
-//     height: 10px;
-
-//   }
-
-//   &__item:last-child::after {
-//     display: none;
-//   }
-
-//   &__item {
-//     position: relative;
-//     padding-right: 17px;
-//   }
-
-//   &__link {
-//     color: #505050;
-//     font-size: 14px;
-//     @extend %rubik-400;
-//     line-height: 1.2;
-
-//   }
-// }
 
 .breadcrumbs {
   background-color: rgba($breadcrumbs, .1);

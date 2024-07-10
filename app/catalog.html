@@ -64,7 +64,7 @@
             <a class="breadcrumbs__link" href="#">Главная</a>
           </li>
           <li class="breadcrumbs__item">
-            <span class="breadcrumbs__link  current">
+            <span class="breadcrumbs__link">
               Каталог товаров
             </span>
           </li>
@@ -75,10 +75,10 @@
       <div class="container">
         <h2 class="title">Каталог продуктов</h2>
         <div class="aside">
-          <div class="assortment__category">
-            <h6 class="assortment__category-title">
+          <div class="assortment__category border">
+            <div class="assortment__category-title">
               Категории
-            </h6>
+            </div>
             <ul class="assortment__category-list">
               <li class="assortment__category-item">
                 <a class="assortment__category-link" href="#">
@@ -122,25 +122,47 @@
               </li>
             </ul>
           </div>
-          <div class="filter__block filter__block--slider">
+          <div class="assortment__suggestions border">
+            <div class="assortment__suggestions-title">
+              Предложения
+            </div>
+            <form class="assortment__suggestions-form">
+              <label class="assortment__suggestions-label">
+                <input class="assortment__suggestions-input" type="checkbox" name="text">
+                Со скидкой
+              </label>
+              
+              <label class="assortment__suggestions-label">
+                <input class="assortment__suggestions-input" type="checkbox" name="text">
+                Новинка
+              </label>
+              
+              <label class="assortment__suggestions-label">
+                <input class="assortment__suggestions-input" type="checkbox" name="text">
+                Хит
+              </label>
+            </form>
+          </div>
+
+          <div class="filter__block filter__block--slider border">
             <div class="filter__head">Цена </div>
             <div class="filter__cost table">
               <div class="table-cell">
                 <span>от</span>
               </div>
-              <div class="table-cell">
-                <input class="form-control" id="priceMin" type="text" value="100">
+              <div class="table__cell">
+                <input class="form__control" id="priceMin" type="text" value="100">
               </div>
-              <div class="table-cell">
+              <div class="table__cell">
                 <span>₴</span>
               </div>
-              <div class="table-cell">
+              <div class="table__cell">
                 <span>до</span>
               </div>
-              <div class="table-cell">
-                <input class="form-control" id="priceMax" type="text" value="1000">
+              <div class="table__cell">
+                <input class="form__control" id="priceMax" type="text" value="1000">
               </div>
-              <div class="table-cell">
+              <div class="table__cell">
                 <span>₴</span>
               </div>
             </div>
